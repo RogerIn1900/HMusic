@@ -9,6 +9,11 @@ interface Message {
   time: string;
 }
 
+@Builder
+export function ChatPageBuilder() {
+  ChatPage()
+}
+
 @Entry
 @Component
 struct ChatPage {
@@ -121,7 +126,7 @@ struct ChatPage {
     setTimeout(async () => {
       const replyTime = `${now.getHours()}:${(now.getMinutes() + 1).toString().padStart(2, '0')}`;
       this.messages.push({
-        text: '感谢你的消息！我将尽快回复你。',
+        text: '(自动回复)感谢你的消息！我将尽快回复你。',
         isUser: false,
         time: replyTime
       });
@@ -149,7 +154,7 @@ struct ChatPage {
           .margin({ left: 16 })
           .layoutWeight(1)
 
-        Image($r('app.media.ic_more'))
+        Image($r('app.media.ic_more2'))
           .width(24)
           .height(24)
           .fillColor('#000000')

@@ -90,16 +90,14 @@ export struct Message {
 
   // 搜索过滤方法
   filterMessages(searchText: string) {
-    if (!searchText || searchText.trim() === '') {
+    if (!this.searchText || this.searchText.trim() === '') {
       // 如果搜索文本为空，显示所有消息
       this.filteredMessages = this.messages.slice();
     } else {
-      // 根据用户名、消息内容、类别进行搜索
+      // 只根据用户名进行精确搜索
       this.filteredMessages = this.messages.filter(message => {
-        const searchLower = searchText.toLowerCase();
-        return message.name.toLowerCase().includes(searchLower) ||
-        message.content.toLowerCase().includes(searchLower) ||
-        message.category.toLowerCase().includes(searchLower);
+        const searchLower = this.searchText.toLowerCase();
+        return message.name.toLowerCase().includes(searchLower);
       });
     }
   }
@@ -123,13 +121,10 @@ export struct Message {
     const suggestions: string[] = [];
     const searchLower = searchText.toLowerCase();
 
-    // 从消息中提取建议
+    // 只从用户名中提取建议
     this.messages.forEach(message => {
       if (message.name.toLowerCase().includes(searchLower)) {
         suggestions.push(message.name);
-      }
-      if (message.category.toLowerCase().includes(searchLower)) {
-        suggestions.push(message.category);
       }
     });
 
@@ -157,7 +152,7 @@ export struct Message {
       Row() {
 
         Row() {
-          Image($r('app.media.ic_more'))
+          Image($r('app.media.ic_more2'))
             .width(24)
             .height(24)
             .fillColor(Color.White)
@@ -203,7 +198,7 @@ export struct Message {
           })
 
         TextInput({
-          placeholder: '搜索联系人或消息',
+          placeholder: '搜索联系人',
           text: this.searchText
         })
           .fontSize(16)
@@ -422,7 +417,7 @@ export struct Message {
             .backgroundColor(Color.White)
             .onClick(() => {
               router.pushUrl({
-                url: "components/ChatPage",
+                url: "pages/ChatPage",
                 params: {
                   userName: message.name,
                   userAvatar: message.avatar,
