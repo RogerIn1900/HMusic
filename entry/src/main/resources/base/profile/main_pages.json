@@ -1,4 +1,10 @@
 {
   "src": [
+    "pages/Index",
+    "pages/VipRecharge",
+    "pages/MyFavorites",
+    "pages/UserSettings",
+    "components/Login",
+    "components/register"
   ]
 }

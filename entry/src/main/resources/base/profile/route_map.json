@@ -1,4 +1,28 @@
 {
   "routerMap": [
+    {
+      "name": "VipRecharge",
+      "pageSourceFile": "src/main/ets/pages/VipRecharge.ets",
+      "buildFunction": "VipRechargeBuilder",
+      "data": {
+        "description": "这是VIP充值页面"
+      }
+    },
+    {
+      "name": "MyFavorites",
+      "pageSourceFile": "src/main/ets/pages/MyFavorites.ets",
+      "buildFunction": "MyFavoritesBuilder",
+      "data": {
+        "description": "这是我喜欢的音乐页面"
+      }
+    },
+    {
+      "name": "UserSettings",
+      "pageSourceFile": "src/main/ets/pages/UserSettings.ets",
+      "buildFunction": "UserSettingsBuilder",
+      "data": {
+        "description": "这是用户设置页面"
+      }
+    }
   ]
 }
