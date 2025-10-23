@@ -1,0 +1,77 @@
+// 每日推荐接口类型
+export interface RecommendDailyType {
+  img: string // 图片
+  title: string // 简介文字
+  type: string // 标题文字
+  top: string // 标题背景颜色
+  bottom: string // 简介背景色
+}
+
+// 每日歌单接口类型
+export interface RecommendListType {
+  img: string
+  title: string
+  count:string
+}
+
+// 每日推荐数据
+export const dailyRecommend: RecommendDailyType[] = [
+  {
+    img: 'http://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/HeimaCloudMusic/recommend1.png',
+    title: '每日推荐 | 今天从《不得不爱》听起 | 私人雷达',
+    type: '每日推荐',
+    top: '#E8F4FD',
+    bottom: '#F0F8FF'
+  },
+  {
+    img: 'http://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/HeimaCloudMusic/recommend2.png',
+    title: '从 [Nothing on Me] 开启无限漫游',
+    type: '私人漫游',
+    top: '#F0F8FF',
+    bottom: '#E6F3FF'
+  },
+  {
+    img: 'http://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/HeimaCloudMusic/recommend3.png',
+    title: '每日推荐 | 今天从《不得不爱》听起 | 私人雷达',
+    type: '华语流行',
+    top: '#E6F3FF',
+    bottom: '#DDF2FF'
+  },
+  {
+    img: 'http://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/HeimaCloudMusic/recommend4.png',
+    title: '每日推荐 | 今天从《不得不爱》听起 | 私人雷达',
+    type: '私人雷达',
+    top: '#DDF2FF',
+    bottom: '#DDF2FF'
+  }
+]
+
+
+// 推荐歌单数据
+export const recommendList: RecommendListType[] = [
+  {
+    img: 'http://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/HeimaCloudMusic/list1.jpg',
+    title: '每日推荐 | 今天从《不得不爱》听起 | 私人雷达',
+    count: '270.9万'
+  },
+  {
+    img: 'http://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/HeimaCloudMusic/list2.jpg',
+    title: 'Yasuo和更多好听的 | 华语私人雷达 | 回忆8090',
+    count: '476.1万'
+  },
+  {
+    img: 'http://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/HeimaCloudMusic/list3.jpg',
+    title: 'Trap Remix丨当欧美热单遇上毒性低音',
+    count: '186.3万'
+  },
+  {
+    img: 'http://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/HeimaCloudMusic/list4.jpg',
+    title: '满级人类进化之路必备BGM | 根本停不下来',
+    count: '186.3万'
+  },
+  {
+    img: 'http://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/HeimaCloudMusic/list5.jpg',
+    title: '认真去聆听这个世界的每一分每一秒 (强烈推荐)',
+    count: '362.8万'
+  }
+]
