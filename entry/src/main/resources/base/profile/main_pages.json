@@ -5,6 +5,7 @@
     "pages/MyFavorites",
     "pages/UserSettings",
     "components/Login",
-    "components/register"
+    "components/register",
+    "pages/ChatPage"
   ]
 }
